@@ -125,6 +125,72 @@
             opacity: 0;
         }
     }
+
+    #albumcover {
+        position: static;
+        margin-left: 60px;
+        margin-top: 45px;
+        left: 10px;
+        height: 600px;
+        width: auto;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+        filter: brightness(70%);
+    }
+    #hobby1 {
+        position: relative;
+        left: 1000px;
+        top: -350px;
+        height: 300px;
+        width: auto;
+        border-radius: 6%;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+    }
+    #hobby2 {
+        position: relative;
+        left: 900px;
+        top: -850px;
+        height: 300px;
+        width: auto;
+        border-radius: 6%;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+    }
+    #nowplaying {
+        position: relative;
+        left: 725px;
+        top: -1025px;
+        height: 50px;
+        width: auto;
+        border-radius: 12px;
+        transform: rotate(90deg);
+    }
+    #miles {
+        position: relative;
+        left: 400px;
+        top: -1300px;
+        height: 200px;
+        width: auto;
+
+    }
+    #text {
+        position: relative;
+        color: #cfcfcf;
+        font-family: Brush Script MT, Brush Script Std, cursive;
+        margin-top: 0px;
+        top: -1200px;
+        left: 550px;
+        font-size: 20px;
+        
+
+    }
     </style>
 </head>
 <body>
@@ -136,18 +202,25 @@
         <div class="blob" id="blob5"></div>
         <div class="blob" id="blob6"></div>
     </div>
-
-    <div class="content">
-        <!-- Seu conteúdo aqui -->
-        <h1>Bem-vindo</h1>
-        <p>Um pouco sobre mim.</p>
-    </div>
     <div class="image">
-        <div id="albumcover"><img src="/DOCUMENTOS/PORTIFOLIO_PESSOAL/blond.png" alt=""></div>
-        <div id="hobby1"></div>
-        <div id="hobby2"></div>
+        <div id="album"><img id="albumcover"src="/blond.png" alt=""></div>
+        <div id="hobbyes1"><img id="hobby1"src="/guitar.jpg" alt=""></div>
+        <div id="hobbyes2"><img id="hobby2"src="/skate.jpg" alt=""></div>
+        <div id="music"><img id="nowplaying" src="/smuckers.png" ></div>
+        <div id="filmref"><img id="miles" src="/milesmoriles.png"></div>
     </div>
-
+    <div id="text">
+        <h1>Este sou eu</h1>
+        <h2>alguns dados:</h2>
+        <p>Nome: Benjamin <br>
+            Idade: 17 anitos <br>
+            altura: 162 :P <br>
+            tipo sanguineo: B+ <br>
+            alergico a: poeira/gato/cachorro <br>
+            gosto musical: amplo, mas no geral hiphop rap e rock indie <br>
+            mensagem: i still love her 💘
+        </p>
+    </div>
 
 </body>
 
