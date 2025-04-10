@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paschoalini Rings</title>
-    <style>/* Reset básico */
+    <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     html, body {
         height: 100vh;
         overflow-x: hidden;
         background-color: #121212;
         font-family: sans-serif;
     }
-    
-    /* Conteúdo principal */
+
     .content {
         position: relative;
         z-index: 1;
         padding: 100px;
         color: white;
     }
-    
-    /* Container fixo dos blobs */
+
     #blobs-wrapper {
         position: fixed;
         top: 0;
@@ -37,8 +35,7 @@
         pointer-events: none;
         overflow: hidden;
     }
-    
-    /* Estilo padrão dos blobs */
+
     .blob {
         position: absolute;
         border-radius: 50%;
@@ -46,91 +43,29 @@
         filter: blur(60px);
         opacity: 0.3;
     }
-    
-    /* Blobs subindo */
-    #blob1 {
-        width: 200px;
-        height: 200px;
-        left: 10%;
-        animation: floatUp 19s linear infinite;
-    }
-    
-    #blob2 {
-        width: 180px;
-        height: 180px;
-        left: 35%;
-        animation: floatDown 30s linear infinite;
-    }
-    
-    #blob3 {
-        width: 220px;
-        height: 220px;
-        left: 70%;
-        animation: floatUp 20s linear infinite;
-    }
-    
-    /* Blobs descendo */
-    #blob4 {
-        width: 160px;
-        height: 160px;
-        left: 20%;
-        animation: floatDown 29s linear infinite;
-    }
-    
-    #blob5 {
-        width: 180px;
-        height: 180px;
-        left: 50%;
-        animation: floatUp 17s linear infinite;
-    }
-    
-    #blob6 {
-        width: 200px;
-        height: 200px;
-        left: 80%;
-        animation: floatDown 22s linear infinite;
-    }
-    
-    /* Animações */
+
+    #blob1 { width: 200px; height: 200px; left: 10%; animation: floatUp 19s linear infinite; }
+    #blob2 { width: 180px; height: 180px; left: 35%; animation: floatDown 30s linear infinite; }
+    #blob3 { width: 220px; height: 220px; left: 70%; animation: floatUp 20s linear infinite; }
+    #blob4 { width: 160px; height: 160px; left: 20%; animation: floatDown 29s linear infinite; }
+    #blob5 { width: 180px; height: 180px; left: 50%; animation: floatUp 17s linear infinite; }
+    #blob6 { width: 200px; height: 200px; left: 80%; animation: floatDown 22s linear infinite; }
+
     @keyframes floatUp {
-        0% {
-            top: 100vh;
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.4;
-        }
-        90% {
-            opacity: 0.4;
-        }
-        100% {
-            top: -250px;
-            opacity: 0;
-        }
+        0% { top: 100vh; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: -250px; opacity: 0; }
     }
-    
+
     @keyframes floatDown {
-        0% {
-            top: -250px;
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.4;
-        }
-        90% {
-            opacity: 0.4;
-        }
-        100% {
-            top: 100vh;
-            opacity: 0;
-        }
+        0% { top: -250px; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: 100vh; opacity: 0; }
     }
 
     #albumcover {
-        position: static;
         margin-left: 60px;
         margin-top: 45px;
-        left: 10px;
         height: 600px;
         width: auto;
         border-top-right-radius: 7%;
@@ -139,58 +74,160 @@
         border-bottom-right-radius: 1%;
         filter: brightness(70%);
     }
-    #hobby1 {
-        position: relative;
-        left: 1000px;
-        top: -350px;
-        height: 300px;
-        width: auto;
-        border-radius: 6%;
-        border-top-right-radius: 7%;
-        border-bottom-left-radius: 7%;
-        border-top-left-radius: 1%;
-        border-bottom-right-radius: 1%;
-    }
-    #hobby2 {
-        position: relative;
-        left: 900px;
-        top: -850px;
-        height: 300px;
-        width: auto;
-        border-radius: 6%;
-        border-top-right-radius: 7%;
-        border-bottom-left-radius: 7%;
-        border-top-left-radius: 1%;
-        border-bottom-right-radius: 1%;
-    }
-    #nowplaying {
-        position: relative;
-        left: 725px;
-        top: -1025px;
-        height: 50px;
-        width: auto;
-        border-radius: 12px;
-        transform: rotate(90deg);
-    }
-    #miles {
-        position: relative;
-        left: 400px;
-        top: -1300px;
-        height: 200px;
-        width: auto;
 
+    #hobby1, #hobby2, #nowplaying, #miles {
+        position: relative;
+        border-radius: 6%;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+        width: auto;
     }
+
+    #hobby1 { left: 1000px; top: -350px; height: 300px; }
+    #hobby2 { left: 900px; top: -850px; height: 300px; }
+    #nowplaying { left: 725px; top: -1025px; height: 50px; transform: rotate(90deg); border-radius: 12px; }
+    #miles { left: 400px; top: -1300px; height: 200px; }
+
     #text {
         position: relative;
         color: #cfcfcf;
         font-family: Brush Script MT, Brush Script Std, cursive;
-        margin-top: 0px;
         top: -1200px;
         left: 550px;
         font-size: 20px;
-        
-
     }
+
+    @media screen and (max-width: 1024px) {
+        #albumcover {
+            height: 300px;
+            margin-left: 20px;
+        }
+        #hobby1, #hobby2, #nowplaying, #miles {
+            height: auto;
+            max-width: 90%;
+            left: 0;
+            top: 0;
+            display: block;
+            margin: 20px auto;
+        }
+        #nowplaying {
+            transform: rotate(0deg);
+        }
+        #text {
+            top: 0;
+            left: 0;
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        #albumcover {
+            height: 200px;
+        }
+        #text {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 768px) and (orientation: portrait) {
+    #albumcover {
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+    }
+
+    #miles {
+        position: relative;
+        height: 100px;
+        margin-top: -280px; /* Sobe até sobrepor o albumcover */
+        margin-left: auto;
+        margin-right: 20px; /* Encosta no canto direito */
+        z-index: 2;
+        display: block;
+    }
+
+    #hobby1, #hobby2 {
+        position: relative;
+        display: block;
+        margin: 30px auto;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+
+    #nowplaying {
+        position: relative;
+        display: block;
+        margin: -20px auto 10px auto;
+        transform: rotate(0deg);
+        height: 40px;
+    }
+
+    #text {
+        top: 0;
+        left: 0;
+        margin: 30px 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) and (orientation: portrait) {
+    #albumcover {
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+    }
+
+    #miles {
+        position: relative;
+        height: 100px;
+        margin-top: -750px; /* Se isso está certo visualmente, pode manter */
+        margin-left: auto;
+        margin-right: 1px;
+        z-index: 2;
+        display: block;
+    }
+
+    #hobby1 {
+        position: relative;
+        display: block;
+        margin: 50px auto 10px auto;
+        height: 150px;
+    }
+
+    #nowplaying {
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        transform: rotate(0deg);
+        height: 40px;
+        top: 0px;
+    }
+
+    #hobby2 {
+        position: relative;
+        display: block;
+        margin: 10px auto 30px auto;
+        height: 150px;
+    }
+
+    #text {
+        position: relative;
+        margin: 30px 20px;
+        font-size: 16px;
+        text-align: center;
+        top: 600px;     /* Corrige sobreposição */
+        left: auto;    /* Corrige posicionamento */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -203,10 +240,10 @@
         <div class="blob" id="blob6"></div>
     </div>
     <div class="image">
-        <div id="album"><img id="albumcover"src="/blond.png" alt=""></div>
-        <div id="hobbyes1"><img id="hobby1"src="/guitar.jpg" alt=""></div>
-        <div id="hobbyes2"><img id="hobby2"src="/skate.jpg" alt=""></div>
-        <div id="music"><img id="nowplaying" src="/smuckers.png" ></div>
+        <div id="album"><img id="albumcover" src="/blond.png" alt=""></div>
+        <div id="hobbyes1"><img id="hobby1" src="/guitar.jpg" alt=""></div>
+        <div id="hobbyes2"><img id="hobby2" src="/skate.jpg" alt=""></div>
+        <div id="music"><img id="nowplaying" src="/smuckers.png"></div>
         <div id="filmref"><img id="miles" src="/milesmoriles.png"></div>
     </div>
     <div id="text">
@@ -221,7 +258,271 @@
             mensagem: i still love her 💘
         </p>
     </div>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/0vrBBRjk2fc?autoplay=1&loop=1&playlist=0vrBBRjk2fc" frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
 </body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paschoalini Rings</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    html, body {
+        height: 100vh;
+        overflow-x: hidden;
+        background-color: #121212;
+        font-family: sans-serif;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        padding: 100px;
+        color: white;
+    }
+
+    #blobs-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 150vh;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #cfcfcf;
+        filter: blur(60px);
+        opacity: 0.3;
+    }
+
+    #blob1 { width: 200px; height: 200px; left: 10%; animation: floatUp 19s linear infinite; }
+    #blob2 { width: 180px; height: 180px; left: 35%; animation: floatDown 30s linear infinite; }
+    #blob3 { width: 220px; height: 220px; left: 70%; animation: floatUp 20s linear infinite; }
+    #blob4 { width: 160px; height: 160px; left: 20%; animation: floatDown 29s linear infinite; }
+    #blob5 { width: 180px; height: 180px; left: 50%; animation: floatUp 17s linear infinite; }
+    #blob6 { width: 200px; height: 200px; left: 80%; animation: floatDown 22s linear infinite; }
+
+    @keyframes floatUp {
+        0% { top: 100vh; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: -250px; opacity: 0; }
+    }
+
+    @keyframes floatDown {
+        0% { top: -250px; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: 100vh; opacity: 0; }
+    }
+
+    #albumcover {
+        margin-left: 60px;
+        margin-top: 45px;
+        height: 600px;
+        width: auto;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+        filter: brightness(70%);
+    }
+
+    #hobby1, #hobby2, #nowplaying, #miles {
+        position: relative;
+        border-radius: 6%;
+        border-top-right-radius: 7%;
+        border-bottom-left-radius: 7%;
+        border-top-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+        width: auto;
+    }
+
+    #hobby1 { left: 1000px; top: -350px; height: 300px; }
+    #hobby2 { left: 900px; top: -850px; height: 300px; }
+    #nowplaying { left: 725px; top: -1025px; height: 50px; transform: rotate(90deg); border-radius: 12px; }
+    #miles { left: 400px; top: -1300px; height: 200px; }
+
+    #text {
+        position: relative;
+        color: #cfcfcf;
+        font-family: Brush Script MT, Brush Script Std, cursive;
+        top: -1200px;
+        left: 550px;
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        #albumcover {
+            height: 300px;
+            margin-left: 20px;
+        }
+        #hobby1, #hobby2, #nowplaying, #miles {
+            height: auto;
+            max-width: 90%;
+            left: 0;
+            top: 0;
+            display: block;
+            margin: 20px auto;
+        }
+        #nowplaying {
+            transform: rotate(0deg);
+        }
+        #text {
+            top: 0;
+            left: 0;
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        #albumcover {
+            height: 200px;
+        }
+        #text {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 768px) and (orientation: portrait) {
+    #albumcover {
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+    }
+
+    #miles {
+        position: relative;
+        height: 100px;
+        margin-top: -280px; /* Sobe até sobrepor o albumcover */
+        margin-left: auto;
+        margin-right: 20px; /* Encosta no canto direito */
+        z-index: 2;
+        display: block;
+    }
+
+    #hobby1, #hobby2 {
+        position: relative;
+        display: block;
+        margin: 30px auto;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+
+    #nowplaying {
+        position: relative;
+        display: block;
+        margin: -20px auto 10px auto;
+        transform: rotate(0deg);
+        height: 40px;
+    }
+
+    #text {
+        top: 0;
+        left: 0;
+        margin: 30px 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) and (orientation: portrait) {
+    #albumcover {
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+    }
+
+    #miles {
+        position: relative;
+        height: 100px;
+        margin-top: -750px; /* Se isso está certo visualmente, pode manter */
+        margin-left: auto;
+        margin-right: 1px;
+        z-index: 2;
+        display: block;
+    }
+
+    #hobby1 {
+        position: relative;
+        display: block;
+        margin: 50px auto 10px auto;
+        height: 150px;
+    }
+
+    #nowplaying {
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        transform: rotate(0deg);
+        height: 40px;
+        top: 0px;
+    }
+
+    #hobby2 {
+        position: relative;
+        display: block;
+        margin: 10px auto 30px auto;
+        height: 150px;
+    }
+
+    #text {
+        position: relative;
+        margin: 30px 20px;
+        font-size: 16px;
+        text-align: center;
+        top: 600px;     /* Corrige sobreposição */
+        left: auto;    /* Corrige posicionamento */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="blobs-wrapper">
+        <div class="blob" id="blob1"></div>
+        <div class="blob" id="blob2"></div>
+        <div class="blob" id="blob3"></div>
+        <div class="blob" id="blob4"></div>
+        <div class="blob" id="blob5"></div>
+        <div class="blob" id="blob6"></div>
+    </div>
+    <div class="image">
+        <div id="album"><img id="albumcover" src="/blond.png" alt=""></div>
+        <div id="hobbyes1"><img id="hobby1" src="/guitar.jpg" alt=""></div>
+        <div id="hobbyes2"><img id="hobby2" src="/skate.jpg" alt=""></div>
+        <div id="music"><img id="nowplaying" src="/smuckers.png"></div>
+        <div id="filmref"><img id="miles" src="/milesmoriles.png"></div>
+    </div>
+    <div id="text">
+        <h1>Este sou eu</h1>
+        <h2>alguns dados:</h2>
+        <p>Nome: Benjamin <br>
+            Idade: 17 anitos <br>
+            altura: 162 :P <br>
+            tipo sanguineo: B+ <br>
+            alergico a: poeira/gato/cachorro <br>
+            gosto musical: amplo, mas no geral hiphop rap e rock indie <br>
+            mensagem: i still love her 💘
+        </p>
+    </div>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/0vrBBRjk2fc?autoplay=1&loop=1&playlist=0vrBBRjk2fc" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+</body>
 </html>
